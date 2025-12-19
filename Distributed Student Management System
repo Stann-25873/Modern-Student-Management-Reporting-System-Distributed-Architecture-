@@ -1,0 +1,43 @@
+Distributed Student Management System:
+
+A professional Java-based enterprise application featuring 
+a decoupled Client-Server architecture,
+secure authentication, and a multi-format reporting engine.
+
+🚀 Core FeaturesDistributed Architecture:
+
+Decoupled Client/Server communication using Java RMI.
+Secure Authentication: User registration and login secured by BCrypt password hashing.
+
+OTP Verification: 
+Integrated Apache ActiveMQ for asynchronous
+One-Time Password delivery during registration and password recovery.
+
+Advanced Reporting:
+Export system data directly to PDF, XLSX, and CSV using iText and Apache POI.
+
+Persistence Layer: 
+Robust Data Access Objects (DAO) using Hibernate ORM and PostgreSQL.
+Email Integration: Automated system notifications using JavaMail API.
+
+🛠️ Technology Stack Layer Technologies Used FrontendJava Swing, FlatLaf (UI), 
+NetBeans IDEMiddlewareJava RMI (Remote Method Invocation),
+ActiveMQBackendJava 8 (JDK 1.8), 
+Hibernate 4.3.xDatabase PostgreSQL 
+LibrariesiText 5 (PDF), Apache POI (Excel), BCrypt (Security)
+🏗️ Architecture & LogicThe system is divided into two main components:
+
+1. The Server (StudentServer)Acts as the central "Brain." 
+It manages the Hibernate Session Factory, hosts the RMI Registry, 
+and interacts with the ActiveMQ Broker to queue OTP messages.
+It ensures that the database is never exposed directly to the user.
+
+2. The Client (StudentClient)A desktop application that provides
+a modern dashboard for managing Departments, Courses, and Students. 
+It consumes the RMI services and includes a specialized ReportExporter 
+utility that transforms Java Object Lists into physical documents.
+
+📦 Prerequisites Java JDK
+
+1.8PostgreSQL 12+Apache ActiveMQ 5.
+15+NetBeans or IntelliJ IDEA
